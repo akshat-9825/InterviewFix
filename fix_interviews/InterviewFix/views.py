@@ -23,8 +23,13 @@ def create_interview_entry(request):
   json_data = json.loads(request.body) 
   candidate_id = json_data['candidate']
   interviewer_id = json_data['interviewer']
-  candidate_user = Candidate.objects.get(id=candidate_id)
-  interviewer_user = Interviewer.objects.get(id=interviewer_id)
+  try:
+    candidate_user = Candidate.objects.get(id=candidate_id)
+    interviewer_user = Interviewer.objects.get(id=interviewer_id)
+  except:
+    return JsonResponse({
+      "Status":"Unsuccessful"
+    })
 
   st = datetime.fromisoformat(json_data['start_time'][:-1])
   st.strftime('%Y-%m-%d %H:%M:%S')
@@ -71,7 +76,12 @@ def checker(candidate, interviewer):
 def delete_interview(request):
   json_data = json.loads(request.body) 
   interview_id = json_data['interview_id']
-  interview = Interview.objects.get(interview_id = interview_id)
+  try:
+    interview = Interview.objects.get(interview_id = interview_id)
+  except:
+    return JsonResponse({
+      "Status":"Unsuccessful"
+    })
   interview.delete()
   return JsonResponse({
       "Status":"Successful"
@@ -82,10 +92,14 @@ def edit_interview(request):
   interview_id= json_data['interview_id']
   candidate_id = json_data['candidate']
   interviewer_id = json_data['interviewer']
-  interview=Interview.objects.get(interview_id=interview_id)
-  candidate_user = Candidate.objects.get(id=candidate_id)
-  interviewer_user = Interviewer.objects.get(id=interviewer_id)
-   
+  try:
+    interview=Interview.objects.get(interview_id=interview_id)
+    candidate_user = Candidate.objects.get(id=candidate_id)
+    interviewer_user = Interviewer.objects.get(id=interviewer_id)
+  except:
+    return JsonResponse({
+      "Status":"Unsuccessful"
+    }) 
   st = datetime.fromisoformat(json_data['start_time'][:-1])
   st.strftime('%Y-%m-%d %H:%M:%S')
   
