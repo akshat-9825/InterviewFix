@@ -2,10 +2,43 @@
     font-size: 10;
     color: white;
 }
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.edit-del-grp{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .sidepanel{
     max-width: 20%;
     height: 100%;
+}
+
+.interview-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-time{
+    font-size: 15px;
+}
+.form{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+.date-time-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 260px;
 }
 
 .interviews-lists{
@@ -14,4 +47,14 @@
     justify-content: center;
     flex-direction: column;
     gap: 5px;
+}
+
+.dropdowns{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.drop{
+    width: 450px;
 }
