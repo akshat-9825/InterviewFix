@@ -18,6 +18,14 @@ def interviews_view(request):
   data = list(Interview.objects.values())
   return JsonResponse(data, safe=False)
 
+def interviewers_view(request):
+  data = list(Interviewer.objects.values())
+  return JsonResponse(data, safe=False)
+
+def candidate_view(request):
+  data = list(Candidate.objects.values())
+  return JsonResponse(data, safe=False)
+
 @csrf_exempt
 def create_interview_entry(request):
   json_data = json.loads(request.body) 

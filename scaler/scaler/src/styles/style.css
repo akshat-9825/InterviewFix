@@ -1,0 +1,17 @@
+.navbar{
+    font-size: 10;
+    color: white;
+}
+
+.sidepanel{
+    max-width: 20%;
+    height: 100%;
+}
+
+.interviews-lists{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
