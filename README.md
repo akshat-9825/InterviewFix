@@ -67,8 +67,6 @@ Front-End (fix_interviews)
 
      install npm
      npm start
-
--> After this you can simply use for starting server
       
 -> Go to http://localhost:3000/
 
